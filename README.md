@@ -17,11 +17,13 @@ Bu sürüm **prototip**: veriler sahte, tarayıcıda (localStorage) saklanıyor,
 
 | Kısım | Dosya |
 |---|---|
-| Keşfet (tokenler, hacim, creator'a giden ücret) | `src/pages/Explore.tsx` |
-| Token çıkar (ücret yönlendirme önizlemesi) | `src/pages/Launch.tsx` |
-| Creator paneli (giriş, otomatik ödeme, onay/red) | `src/pages/Creator.tsx` |
-| Entegrasyon arayüzleri (launch / auth / payout) | `src/services/types.ts` |
-| Sahte implementasyon | `src/services/mock.ts` |
+| Düzen (sol menü, üst arama, footer) | `src/App.tsx` |
+| Ana sayfa (hero, kutular, top tokenler/profiller, ödemeler) | `src/pages/Home.tsx` |
+| Keşfet / Ödemeler / Analitik / Dokümanlar | `src/pages/Explore.tsx`, `Payments.tsx`, `Analytics.tsx`, `Docs.tsx` |
+| Başlat (iki sütunlu form + önizleme) | `src/pages/Launch.tsx` |
+| Creator paneli (giriş, otomatik ödeme, onay/red, opt-out) | `src/pages/Creator.tsx` |
+| Kartlar (token, profil, ödeme) | `src/components.tsx` |
+| Entegrasyon arayüzleri + mock | `src/services/` |
 | Oranlar, eşik, state | `src/store.ts` |
 
 Gerçek entegrasyon için `src/services/types.ts`'deki arayüzler uygulanıp `src/services/index.ts`'de mock yerine takılır.
@@ -33,7 +35,7 @@ npm install
 npm run dev
 ```
 
-Tarayıcıda http://localhost:5173 açılır. Sayfalar: `#/explore`, `#/launch`, `#/creator`.
+Tarayıcıda http://localhost:5173 açılır. Sayfalar: `#/home`, `#/explore`, `#/payments`, `#/analytics`, `#/launch`, `#/creator`, `#/docs`.
 
 ## Açık sorular (senin kararın)
 

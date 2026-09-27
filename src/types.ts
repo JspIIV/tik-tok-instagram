@@ -17,6 +17,17 @@ export interface Token {
   // Hazineden creator'ın cüzdanına ödenmiş tutar
   paidOutSol: number
   creatorStatus: CreatorStatus
+  // Deployer'a giden pay (bps, 0–1000)
+  deployerBps: number
+}
+
+export interface Payment {
+  id: string
+  platform: Platform
+  handle: string
+  amountSol: number
+  createdAt: number
+  status: 'sent' | 'pending' | 'limit'
 }
 
 export interface LaunchInput {
@@ -26,6 +37,8 @@ export interface LaunchInput {
   description: string
   platform: Platform
   handle: string
+  deployerBps: number
+  initialBuySol: number
 }
 
 export interface CreatorSession {
